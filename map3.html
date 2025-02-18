@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Map</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <style>
+        body, html { margin: 0; height: 100%; }
+        
+        #map3 { width: 100vw; height: 100vh; }
+
+        .legend, .legend2 {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            background: white;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            pointer-events: auto;
+        }
+        .legend h4, .legend2 h4 {
+            margin: 0 0 5px;
+            font-size: 14px;
+        }
+        .legend div, .legend2 div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend span, .legend2 span {
+            display: inline-block;
+            width: 20px;
+            height: 15px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <nav id="menu"></nav>
+
+    <!-- 地图容器 -->
+    <div id='map3'></div>    
+
+    <!-- 图例（包含标题、描述、数据来源和颜色图例） -->
+    <div id="income-legend" class="legend">
+        <h4>Per capita kilocalorie supply </h4>
+        <h4>from all foods per day</h4>
+        
+
+        <p class="description">
+            <strong>Data source:</strong> UN Food and Agriculture Organization   
+        </p>
+
+        <p class="description">
+            <a href="https://www.fao.org/faostat/en/#data/FBS" target="_blank">Learn more about this data</a>
+        </p>
+
+        <p class="description">
+            <strong>Classification method:</strong> Linear
+        </p>
+
+        <!-- 颜色图例 -->
+        <h4>Calories (kcal/person/day)</h4>
+        <div><span style="background-color: #f7fcf0"></span>0 – 2057.66</div>
+        <div><span style="background-color: #ccebc5"></span>2057.66 – 2420.52</div>
+        <div><span style="background-color: #7bccc4"></span>2420.52 – 2802.56</div>
+        <div><span style="background-color: #2b8cbe"></span>2802.56 – 3189.17</div>
+        <div><span style="background-color: #084081"></span>≥ 3189.17</div>
+    </div>    
+
+    <!-- 引入地图脚本 -->
+    <script type='text/javascript' src="./js/map3.js"></script>
+</body>
+</html>
+
